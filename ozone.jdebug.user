@@ -1,0 +1,11 @@
+OpenDocument="startup_stm32f429xx.s", FilePath="/home/sergey/Projects/STM32/F429/Blink_Sysview/Startup/startup_stm32f429xx.s", Line=70
+OpenDocument="main.c", FilePath="/home/sergey/Projects/STM32/F429/Blink_Sysview/Source/main.c", Line=27
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=390, h=270, FilterBarShown=0, FilteredItems=[], RefreshRate=1, ToolbarShown=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=390, h=235, FilterBarShown=0, ExecCountersShown=0
+OpenWindow="Source", x=0, y=0, w=0, h=0, FilterBarShown=0, ExecCountersShown=0
+OpenWindow="Watched Data", DockArea=BOTTOM, x=1, y=0, w=503, h=249, FilterBarShown=0
+OpenWindow="Terminal", DockArea=BOTTOM, x=0, y=0, w=1031, h=249, FilterBarShown=0
+TableHeader="Watched Data", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh"], ColWidths=[125;97;117;164]
+TableHeader="tableWidgetSamples", SortCol="Index", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Channel 0"], ColWidths=[84;119;126]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Auto";"Name";"Value";"Description"], ColWidths=[37;202;191;259]

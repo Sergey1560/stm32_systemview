@@ -19,24 +19,34 @@ void timer2_init(void){
 
 void TIM2_IRQHandler(void)
 {
+	SEGGER_SYSVIEW_RecordEnterISR();
 	if(TIM2->SR & TIM_SR_UIF)	TIM2->SR &= ~TIM_SR_UIF; 
 
 	if(led_on){
-		printf("Led is off\n");
+		SEGGER_RTT_printf(0,"Led is off\n");
 		GPIOD->BSRR = GPIO_BSRR_BR14;
 		led_on=0;
 	}else{
-		printf("Led is on\n");
+		SEGGER_RTT_printf(0,"Led is on\n");
 		GPIOD->BSRR = GPIO_BSRR_BS14;
 		led_on=1;
 	}
+
+	
+
+	SEGGER_SYSVIEW_RecordExitISR();
 }
 
-
-
+/*
+void SysTick_Handler(void){
+	SEGGER_SYSVIEW_RecordEnterISR();
+	SEGGER_SYSVIEW_RecordExitISR();
+}
+*/
 int main(void){
 
 	RCC_init();
+	//SysTick_Config(SystemCoreClock/1000);
 
 	SEGGER_RTT_ConfigUpBuffer(0, NULL, NULL, 0, SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL);
 	SEGGER_RTT_WriteString(0, "##### System start ######\r\n");
@@ -50,6 +60,7 @@ int main(void){
 	timer2_init();
 
 	while(1){
+		//SEGGER_SYSVIEW_OnIdle();
 	};
 
 
